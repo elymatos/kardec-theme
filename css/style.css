@@ -3174,7 +3174,7 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		color: #fff;
+		color: #404040;
 		padding: 12em 0 20em 0;
 		text-align: center;
 	}
@@ -3184,7 +3184,7 @@
 		}
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: #fff;
+      color: #404040;
 		}
 
 		#banner h2 {
@@ -3205,7 +3205,7 @@
 		#banner .button {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
-			color: #fff;
+      color: #404040;
 			min-width: 12em;
 		}
 
@@ -4070,4 +4070,47 @@
 #tagSelector {
     width: 50%;
     display: inline-block;
+}
+
+/* Begin additions by Kardec-theme */
+
+#show-box {
+  display:flex;
+  flex-direction: row;
+  margin:1rem;
+}
+
+#show-box .viewer {
+  width:50%;
+}
+
+#show-box .data {
+  margin: 0 1rem 1rem 1rem;
+  padding: 0 1rem 1rem 1rem;
+  width:50%;
+  height:600px
+}
+
+#show-box .data .tab {
+  height:550px
+}
+
+#show-box .data .tab .card {
+  width: 100%;
+}
+
+#show-box .data .tab .secondaryTab {
+  height:460px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.personagem {
+  text-align: justify;
+}
+
+.pageText {
+  text-align: justify;
 }
