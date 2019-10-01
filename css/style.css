@@ -112,7 +112,8 @@
 	}
 
 	body, input, select, textarea {
-		color: #777;
+		/*color: #777;*/
+		color: #404040;
 		font-family: "Source Sans Pro", sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
@@ -2143,7 +2144,7 @@
 	input[type="password"],
 	input[type="email"],
 	select {
-		height: 3em;
+		height: 2em;
 	}
 
 	textarea {
@@ -3926,7 +3927,7 @@
     background-color: transparent;
     color: #fff;
     line-height: 1.95em;
-    padding: 0.55em 1em;
+    padding: 0.095em 1em;
     border-radius: 6px;
     font-family: inherit;
     font-weight: 400;
