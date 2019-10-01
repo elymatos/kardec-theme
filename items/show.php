@@ -10,49 +10,65 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
     <?php endif; ?>
 </header>
 
-<div class="box">
-    <span class="image featured"><?php echo record_image('item', 'fullsize') ?></span>
-    <?php echo all_element_texts('item'); ?>
-
-    <!-- The following returns all of the files associated with an item. -->
-    <?php if (metadata('item', 'has files')): ?>
-        <div id="itemfiles" class="element">
-            <h3><?php echo __('Files'); ?></h3>
-            <div class="row gtr-50 gtr-uniform">
-                <?php echo files_for_item(); ?>
-            </div>
-        </div>
-    <?php endif; ?>
-
-    <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-    <?php if (metadata('item', 'Collection Name')): ?>
-        <div id="collection" class="element item-collection">
-            <h3><?php echo __('Collection'); ?></h3>
-            <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
-        </div>
-    <?php endif; ?>
-
-    <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata('item', 'has tags')): ?>
-    <div id="item-tags" class="element">
-        <h3><?php echo __('Tags'); ?></h3>
-        <div class="element-text"><?php echo tag_string('item'); ?></div>
+<div style="display:flex; flex-direction: row; margin:1rem;">
+  <div style="width:50%">
+    <?php
+    echo $this->universalViewer($item, array(
+      'style' => 'height: 600px;' . get_option('universalviewer_style'),
+    ));
+    ?>
+  </div>
+  <div style="margin: 0 1rem 1rem 1rem; 0 1rem 1rem 1rem; width:45%; height:600px">
+    <div class="ui top attached tabular menu">
+      <a class="active item" data-tab="first">Dados</a>
+      <a class="item" data-tab="second">Transcrição</a>
+      <a class="item" data-tab="third">Tradução</a>
     </div>
-    <?php endif;?>
+    <div class="ui bottom attached active tab segment" data-tab="first" style="height:550px">
+      <div class="ui card">
+        <?php $data = all_element_texts('item', ['retyrn_type' => 'array']); ?>
+        <?php foreach($data as $name => $value) : ?>
+        <div class="content">
+          <div class="ui small feed">
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <a><?php echo __($name); ?>:</a> <?php echo $value; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
 
-    <!-- The following prints a citation for this item. -->
-    <div id="item-citation" class="element">
+      <?php echo all_element_texts('item'); ?>
+
+      <!-- The following prints a list of all tags associated with the item -->
+      <?php if (metadata('item', 'has tags')): ?>
+        <div id="item-tags" class="element">
+          <h3><?php echo __('Tags'); ?></h3>
+          <div class="element-text"><?php echo tag_string('item'); ?></div>
+        </div>
+      <?php endif;?>
+
+      <!-- The following prints a citation for this item. -->
+      <div id="item-citation" class="element">
         <h3><?php echo __('Citation'); ?></h3>
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
+      </div>
     </div>
-
-    <div id="item-output-formats" class="element">
-        <h3><?php echo __('Output Formats'); ?></h3>
-        <div class="element-text"><?php echo output_format_list(); ?></div>
+    <div class="ui bottom attached tab segment" data-tab="second">
+      Second
     </div>
-
+    <div class="ui bottom attached tab segment" data-tab="third">
+      Third
+    </div>
     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+  </div>
+
 </div>
+
 
 <nav>
 <ul class="item-pagination navigation">
@@ -62,3 +78,9 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 </nav>
 
 <?php echo foot(); ?>
+
+<script>
+    jQuery('.menu .item')
+        .tab()
+    ;
+</script>

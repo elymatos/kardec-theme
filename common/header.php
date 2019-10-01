@@ -32,6 +32,7 @@
 
         <!-- Stylesheets -->
         <?php
+        queue_css_file('semantic');
         queue_css_file(array('style'));
         queue_css_file('lightbox');
         echo head_css();
@@ -41,6 +42,7 @@
         <?php
         // queue_js_file(array('jquery.dropotron.min', 'jquery.scrollex.min', 'browser.min', 'breakpoints.min', 'util', 'main'));
         queue_js_file('lightbox');
+        queue_js_file('semantic');
         echo head_js();
         ?>
 
@@ -66,6 +68,11 @@
                     </div>
 				</nav>
 			</header>
-
-            <?php if (!is_current_url(url('/'))): ?><section id="main" class="container nonhome"><?php endif; ?>
+            <?php if (!is_current_url(url('/'))): ?>
+              <?php if (strpos(current_url(), 'items/show')): ?>
+                <section id="main" class="container.max nonhome">
+              <?php else: ?>
+                <section id="main" class="container nonhome">
+              <?php endif; ?>
+            <?php endif; ?>
                 <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>
