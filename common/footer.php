@@ -20,9 +20,16 @@
                     <?php endif; ?>
 					<ul class="copyright">
 						<li><?php echo get_theme_option('Footer Text'); ?></li>
-						<li>Theme developed by the <a href="https://github.com/upenndigitalscholarship">Penn Libraries</a></li>
+						<li>Tema desenvolvido por <a href="https://github.com/upenndigitalscholarship">Penn Libraries</a></li>
+            <!--
 						<li><a href="https://github.com/upenndigitalscholarship/mapping-paris">Get the Code</a></li>
+						-->
 					</ul>
+          <ul class="copyright">
+            <li><img src="/themes/kardec-theme/images/logo_cdor.jpg" width="300px"/></li>
+            <li><img src="/themes/kardec-theme/images/logo_nupes.png" height="120px"/></li>
+            <li><img src="/themes/kardec-theme/images/logo_ufjf.jpg" height="120px"/></li>
+          </ul>
 					<?php fire_plugin_hook('public_footer', array('view'=>$this)); ?>
 				</footer>
 

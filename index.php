@@ -117,6 +117,7 @@
 		</section>
 
 	    <!-- Contact Us -->
+<!--
 		<section id="cta">
 
 			<h2>Contact Us</h2>
@@ -134,8 +135,9 @@
                     <li><a href="<?php echo (get_theme_option('github_link')) ?>" class="icon fa-github"><span class="label">Github</span></a></li>
                 <?php endif; ?>
             </ul>
-
+-->
             <!-- This is only a form because I wanted to use the button styles from this template that come with the form... >_< -->
+<!--
             <?php if (get_theme_option('email_us') != ''): ?>
     			<form action="mailto:<?php echo get_theme_option('email_us'); ?>" method="post" enctype="text/plain">
     				<div class="row gtr-50 gtr-uniform">
@@ -147,5 +149,5 @@
             <?php endif; ?>
 
 		</section>
-
+-->
 <?php echo foot(); ?>
