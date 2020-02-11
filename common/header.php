@@ -31,7 +31,8 @@
         <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
 
         <!-- Stylesheets -->
-        <?php
+    <?php
+        queue_css_url('//fonts.googleapis.com/css?family=Mrs+Saint+Delafield&display=swap', 'screen');
         queue_css_file('semantic');
         queue_css_file(array('style'));
         queue_css_file('lightbox');
@@ -63,9 +64,11 @@
 
 				<nav id="nav" role="navigation">
 					<?php echo public_nav_main(); ?>
+<!--
 				    <div id="search-container" role="search">
                         <?php echo search_form(); ?>
                     </div>
+    -->
 				</nav>
 			</header>
             <?php if (!is_current_url(url('/'))): ?>
