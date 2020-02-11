@@ -164,6 +164,7 @@
 		font-size: 2.25em;
 		line-height: 1.5em;
 		letter-spacing: -0.035em;
+    font-family: 'Mrs Saint Delafield', cursive;
 	}
 
 	h3 {
@@ -2875,6 +2876,7 @@
 
 	#page-wrapper {
 		padding-top: 0;
+    background-image: url(http://projetokardec.ufjf.br/themes/kardec-theme/images/banner_letter.jpg)
 	}
 
 	body.landing #page-wrapper {
@@ -3170,13 +3172,14 @@
 
 	#banner {
 		background-attachment: fixed;
-		background-color: #666;
+		/*background-color: #666;*/
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		color: #404040;
 		padding: 12em 0 20em 0;
 		text-align: center;
+    font-family: 'Mrs Saint Delafield', cursive;
 	}
 
 		#banner :last-child {
@@ -3188,8 +3191,10 @@
 		}
 
 		#banner h2 {
-			font-size: 3.5em;
-			line-height: 1em;
+			/*font-size: 3.5em;*/
+      font-size: 5.5em;
+      line-height: 1.5em;
+      letter-spacing: 0.05em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
 		}
@@ -3414,7 +3419,8 @@
 			}
 
 				#banner h2 {
-					font-size: 3.5em;
+          /*font-size: 3.5em;*/
+          font-size: 5.5em;
 				}
 
 	}
@@ -3980,7 +3986,22 @@
 
 #main > h1 {
     border-bottom: solid 2px #e5e5e5;
-    padding: 1em;
+    padding: 0px;
+  font-size: 4.5em;
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+  font-family: 'Mrs Saint Delafield', cursive;
+
+}
+
+#main #primary h1 {
+  border-bottom: solid 2px #e5e5e5;
+  padding: 0px;
+  font-size: 4.5em;
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+  font-family: 'Mrs Saint Delafield', cursive;
+
 }
 
 .hentry, .collections .collection {

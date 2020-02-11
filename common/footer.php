@@ -26,9 +26,9 @@
 						-->
 					</ul>
           <ul class="copyright">
-            <li><img src="/themes/kardec-theme/images/logo_cdor.jpg" width="300px"/></li>
+            <li><img src="/themes/kardec-theme/images/logo_cdor.png" width="300px"/></li>
             <li><img src="/themes/kardec-theme/images/logo_nupes.png" height="120px"/></li>
-            <li><img src="/themes/kardec-theme/images/logo_ufjf.jpg" height="120px"/></li>
+            <li><img src="/themes/kardec-theme/images/logo_ufjf.png" height="120px"/></li>
           </ul>
 					<?php fire_plugin_hook('public_footer', array('view'=>$this)); ?>
 				</footer>
